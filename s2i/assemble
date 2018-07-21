@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -eo pipefail
+cp -Rf /tmp/src/. /home/$NB_USER/work
+
+rm -rf /tmp/src
+if [ -f /home/$NB_USER/work/requirements.txt ]; then
+    (cd /home/$NB_USER/work && conda install -y --file requirements.txt)
+    rm /home/$NB_USER/work/requirements.txt
+fi
