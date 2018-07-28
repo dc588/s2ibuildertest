@@ -9,6 +9,7 @@ LABEL io.k8s.description="S2I builder for Jupyter (minimal-notebook)." \
       io.k8s.display-name="Jupyter (minimal-notebook)" \
       io.openshift.expose-services="8888:http" \
       io.openshift.tags="builder,python,jupyter" \
+      name="s2i-JUPYTER" \
       io.openshift.s2i.scripts-url="image:///opt/app-root/s2i/bin"
 COPY s2i /opt/app-root/s2i
 
